@@ -92,3 +92,25 @@ Some challenges I faced during development were:
 - Handling different UI states such as loading, empty data and API errors.
 
 These challenges helped me understand Angular practically and improve my debugging and problem-solving skills.
+
+
+
+## Screenshots
+
+### Customer List
+![Customer List](screenshots/customer-list.png)
+
+### Add Customer
+![Add Customer](screenshots/add-customer.png)
+
+### Form Validation
+![Form Validation](screenshots/validation.png)
+
+### Edit Customer
+![Edit Customer](screenshots/edit-customer.png)
+
+### View Customer
+![View Customer](screenshots/view-customer.png)
+
+### Delete Confirmation
+![Delete Confirmation](screenshots/delete-confirmation.png)
