@@ -1,0 +1,77 @@
+<h2>Edit Customer</h2>
+
+<form
+  [formGroup]="customerForm"
+ (ngSubmit)="onSubmit()"
+>
+
+  <div>
+    <label>Customer Name</label>
+    <input type="text" formControlName="name">
+  </div>
+
+  <div>
+    <label>Email</label>
+    <input type="email" formControlName="email">
+  </div>
+
+  <div>
+    <label>Phone</label>
+    <input type="text" formControlName="phone">
+  </div>
+
+  <div>
+    <label>Company Name</label>
+    <input type="text" formControlName="companyName">
+  </div>
+
+  <div>
+   <select formControlName="country">
+  <option value="">Select Country</option>
+  <option value="india">India</option>
+  <option value="usa">USA</option>
+  <option value="uk">UK</option>
+</select>
+  </div>
+
+  <div>
+  <select formControlName="city">
+  <option value="">Select City</option>
+  <option value="delhi">Delhi</option>
+  <option value="mumbai">Mumbai</option>
+  <option value="bangalore">Bangalore</option>
+  <option value="chennai">Chennai</option>
+  <option value="dehradun">Dehradun</option>
+  <option value="noida">Noida</option>
+</select>
+  </div>
+
+  <div>
+    <label>Address</label>
+    <textarea formControlName="address"></textarea>
+  </div>
+
+  <div>
+    <label>Customer Type</label>
+
+    <select formControlName="customerType">
+      <option value="">Select customer type</option>
+      <option value="Individual">Individual</option>
+      <option value="Business">Business</option>
+    </select>
+  </div>
+
+  <div>
+    <label>Status</label>
+
+    <select formControlName="status">
+      <option value="Active">Active</option>
+      <option value="Inactive">Inactive</option>
+    </select>
+  </div>
+
+  <button type="submit">
+    Update Customer
+  </button>
+
+</form>

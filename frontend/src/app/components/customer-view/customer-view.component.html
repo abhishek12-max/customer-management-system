@@ -1,0 +1,28 @@
+<h2>Customer Details</h2>
+
+@if (customer) {
+
+  <p><strong>Name:</strong> {{ customer.name }}</p>
+
+  <p><strong>Email:</strong> {{ customer.email }}</p>
+
+  <p><strong>Phone:</strong> {{ customer.phone }}</p>
+
+  <p><strong>Company:</strong> {{ customer.companyName }}</p>
+
+  <p><strong>Country:</strong> {{ customer.country }}</p>
+
+  <p><strong>City:</strong> {{ customer.city }}</p>
+
+  <p><strong>Address:</strong> {{ customer.address }}</p>
+
+  <p><strong>Customer Type:</strong> {{ customer.customerType }}</p>
+
+  <p><strong>Status:</strong> {{ customer.status }}</p>
+
+}
+
+
+<button class="back-btn" (click)="goBack()">
+  Back to Customers
+</button>

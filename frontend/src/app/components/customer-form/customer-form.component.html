@@ -1,0 +1,101 @@
+<h2>Add customer</h2>
+<form [formGroup]="customerForm"
+      (ngSubmit)="onSubmit()"         >
+   <div>
+     <label>Customer name</label>
+     <input type="text" formControlName="name">
+       @if(customerForm.controls.name.invalid && customerForm.controls.name.touched) {
+        <p>name is required</p>
+     }
+   </div>
+
+    <div>
+     <label>Customer Email</label>
+     <input type="email" formControlName="email">
+      @if(customerForm.controls.email.invalid && customerForm.controls.email.touched){
+        <p>please enter the valid email</p>
+      }
+   </div>
+    <div>
+     <label>Customer phone</label>
+     <input type="number" formControlName="phone">
+     @if(customerForm.controls.phone.invalid && customerForm.controls.phone.touched){
+        <p>phone is required</p>
+      }
+   </div>
+   <div>
+  <label>Company Name</label>
+  <input
+    type="text"
+    formControlName="companyName"
+  >
+
+  @if(customerForm.controls.companyName.invalid &&
+      customerForm.controls.companyName.touched) {
+    <p>Company name is required</p>
+  }
+</div>
+
+
+<div>
+  <select formControlName="country">
+  <option value="">Select Country</option>
+  <option value="india">India</option>
+  <option value="usa">USA</option>
+  <option value="uk">UK</option>
+</select>
+
+  @if(customerForm.controls.country.invalid &&
+      customerForm.controls.country.touched) {
+    <p>Country is required</p>
+  }
+</div>
+
+
+<div>
+  <select formControlName="city">
+  <option value="">Select City</option>
+  <option value="delhi">Delhi</option>
+  <option value="mumbai">Mumbai</option>
+  <option value="bangalore">Bangalore</option>
+  <option value="chennai">Chennai</option>
+  <option value="dehradun">Dehradun</option>
+  <option value="noida">Noida</option>
+</select>
+
+  @if(customerForm.controls.city.invalid &&
+      customerForm.controls.city.touched) {
+    <p>City is required</p>
+  }
+</div>
+<div>
+  <label>Address</label>
+  <textarea
+    formControlName="address"
+    placeholder="Enter address"
+  ></textarea>
+</div>
+<div>
+  <label>Customer Type</label>
+
+  <select formControlName="customerType">
+    <option value="">Select customer type</option>
+    <option value="Individual">Individual</option>
+    <option value="Business">Business</option>
+  </select>
+
+  @if(customerForm.controls.customerType.invalid &&
+      customerForm.controls.customerType.touched) {
+    <p>Customer type is required</p>
+  }
+</div>
+<div>
+  <label>Status</label>
+
+  <select formControlName="status">
+    <option value="Active">Active</option>
+    <option value="Inactive">Inactive</option>
+  </select>
+</div>
+   <button type="submit">save</button>
+</form>

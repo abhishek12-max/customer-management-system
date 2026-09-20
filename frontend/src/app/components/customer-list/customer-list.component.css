@@ -1,0 +1,86 @@
+:host {
+  display: block;
+  padding: 30px;
+  background-color: #f5f6f8;
+  min-height: 100vh;
+}
+
+
+
+h2 {
+  margin-bottom: 20px;
+}
+
+.toolbar {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.toolbar input,
+.toolbar select {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.toolbar button {
+  padding: 8px 14px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  padding: 12px;
+  border: 1px solid #ddd;
+  text-align: left;
+}
+
+th {
+  background-color: #f4f4f4;
+}
+
+td button {
+  margin-right: 5px;
+  padding: 6px 10px;
+  cursor: pointer;
+}
+
+.active {
+  color: green;
+  font-weight: bold;
+}
+
+.inactive {
+  color: red;
+  font-weight: bold;
+}
+
+.view-btn,
+.edit-btn,
+.delete-btn {
+  border: none;
+  padding: 7px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-right: 5px;
+}
+
+.view-btn {
+  background-color: #e3f2fd;
+}
+
+.edit-btn {
+  background-color: #fff3cd;
+}
+
+.delete-btn {
+  background-color: #f8d7da;
+}

@@ -1,0 +1,120 @@
+<h2>Customers</h2>
+
+@if (loading) {
+  <p>Loading customers...</p>
+}
+
+@if (errorMessage) {
+  <p>{{ errorMessage }}</p>
+}
+
+<div class="toolbar">
+
+  <input
+    type="text"
+    [(ngModel)]="searchText"
+    placeholder="Search customer..."
+  >
+
+  <select [(ngModel)]="statusFilter">
+    <option value="">All Status</option>
+    <option value="Active">Active</option>
+    <option value="Inactive">Inactive</option>
+  </select>
+
+  <button routerLink="/add-customer">
+    Add Customer
+  </button>
+
+</div>
+
+@if (!loading && !errorMessage && filteredCustomers.length === 0) {
+  <p>No customers found.</p>
+}
+
+@if (!loading && !errorMessage && filteredCustomers.length > 0) {
+
+  <table>
+
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Phone</th>
+        <th>Company</th>
+        <th>City</th>
+        <th>Status</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+
+    <tbody>
+
+      <tr *ngFor="let customer of paginatedCustomers">
+
+        <td>{{ customer.name }}</td>
+        <td>{{ customer.email }}</td>
+        <td>{{ customer.phone }}</td>
+        <td>{{ customer.companyName }}</td>
+        <td>{{ customer.city }}</td>
+        <td>
+  <span
+    [class.active]="customer.status === 'Active'"
+    [class.inactive]="customer.status === 'Inactive'"
+  >
+    {{ customer.status }}
+  </span>
+</td>
+
+       <td>
+
+  <button
+    class="view-btn"
+    [routerLink]="['/customers', customer._id]"
+  >
+    View
+  </button>
+
+  <button
+    class="edit-btn"
+    [routerLink]="['/customers', customer._id, 'edit']"
+  >
+    Edit
+  </button>
+
+  <button
+    class="delete-btn"
+    (click)="deleteCustomer(customer._id)"
+  >
+    Delete
+  </button>
+
+</td>
+
+      </tr>
+
+    </tbody>
+
+  </table>
+
+  <div class="pagination">
+
+  <button
+    (click)="previousPage()"
+    [disabled]="currentPage === 1"
+  >
+    Previous
+  </button>
+
+  <span>Page {{ currentPage }}</span>
+
+  <button
+    (click)="nextPage()"
+    [disabled]="currentPage === totalPages"
+  >
+    Next
+  </button>
+
+</div>
+
+}
